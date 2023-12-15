@@ -6,14 +6,14 @@
   "module": "dist/index.js",
   "typings": "typings",
   "scripts": {
-    "start": "cross-env rollup -c rollup.config.pages.ts -w",
-    "dev": "cross-env npm start",
-    "test": "cross-env jest --coverage",
-    "build": "cross-env npm build:ts && npm build:less",
+    "start": "rollup -c rollup.config.pages.ts -w",
+    "dev": "npm start",
+    "test": "jest --coverage",
+    "build": "npm build:ts && npm build:less",
     "build:ts": "cross-env rollup -c",
-    "build:less": "cross-env lessc src/viewer.less dist/viewer.css && lessc src/viewer-monokai.less dist/viewer-monokai.css",
+    "build:less": "lessc src/viewer.less dist/viewer.css && lessc src/viewer-monokai.less dist/viewer-monokai.css",
     "build:pages": "cross-env NODE_ENV=production BASEDIR=docs rollup -c rollup.config.pages.ts",
-    "prepublish": "cross-env npm build"
+    "prepublish": "npm build"
   },
   "repository": {
     "type": "git",
