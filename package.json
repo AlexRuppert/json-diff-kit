@@ -7,13 +7,13 @@
   "typings": "typings",
   "scripts": {
     "start": "rollup -c rollup.config.pages.ts -w",
-    "dev": "npm start",
+    "dev": "npm run start",
     "test": "jest --coverage",
-    "build": "npm build:ts && npm build:less",
+    "build": "npm run build:ts && npm run build:less",
     "build:ts": "cross-env rollup -c",
     "build:less": "lessc src/viewer.less dist/viewer.css && lessc src/viewer-monokai.less dist/viewer-monokai.css",
     "build:pages": "cross-env NODE_ENV=production BASEDIR=docs rollup -c rollup.config.pages.ts",
-    "prepublish": "npm build"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
